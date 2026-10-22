@@ -1,28 +1,30 @@
-
-function toggleTheme() {
+(() => {
   const body = document.body;
   const button = document.getElementById('theme-toggle');
-  const darkElements = document.querySelectorAll('footer, .intro-sec, .about-card, .card');
+  const year = document.getElementById('current-year');
+  const storageKey = 'gabriel-portfolio-theme';
 
-  body.classList.toggle('dark');
-  darkElements.forEach(el => el.classList.toggle('dark'));
+  const setTheme = (theme) => {
+    const isDark = theme === 'dark';
+    body.classList.toggle('dark', isDark);
+    if (button) {
+      button.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+      button.setAttribute('aria-label', isDark ? 'Ativar modo claro' : 'Ativar modo escuro');
+      button.setAttribute('title', isDark ? 'Ativar modo claro' : 'Ativar modo escuro');
+    }
+  };
 
-  const isDark = body.classList.contains('dark');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  const savedTheme = localStorage.getItem(storageKey);
+  const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  setTheme(savedTheme || preferredTheme);
 
-  button.innerHTML = isDark ? "☀️" : "🌙";
-}
+  button?.addEventListener('click', () => {
+    const nextTheme = body.classList.contains('dark') ? 'light' : 'dark';
+    localStorage.setItem(storageKey, nextTheme);
+    setTheme(nextTheme);
+  });
 
-window.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
-  const button = document.getElementById('theme-toggle');
-  const darkElements = document.querySelectorAll('footer, .intro-sec, .about-card, .card');
-
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
-    darkElements.forEach(el => el.classList.add('dark'));
-    if (button) button.innerHTML = "☀️";
-  } else {
-    if (button) button.innerHTML = "🌙";
-  }
-});
+  if (year) year.textContent = new Date().getFullYear();
+})();

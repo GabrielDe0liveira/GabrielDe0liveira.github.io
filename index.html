@@ -1,130 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
-      rel="stylesheet"
-    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Gabriel de Oliveira, com projetos de desenvolvimento web e JavaScript." />
+    <meta name="theme-color" content="#111827" />
+    <meta property="og:title" content="Gabriel de Oliveira | Portfólio" />
+    <meta property="og:description" content="Projetos de desenvolvimento web de Gabriel de Oliveira." />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://gabrielde0liveira.github.io/" />
+    <link rel="icon" href="assets/icon/coding.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Portifólio-Gabriel</title>
-    <link rel="icon" href="assets/icon/coding.png" type="icon" />
+    <title>Gabriel de Oliveira | Portfólio</title>
   </head>
   <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Página inicial de Gabriel de Oliveira">
+        <span class="brand-mark">G</span>
+        <span>Gabriel de Oliveira</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#projetos">Projetos</a>
+        <a href="aboutMe.html">Quem sou eu?</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ativar modo escuro" title="Alternar tema">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+    </header>
+
     <main>
-      <section class="intro-sec">
+      <section class="intro section-shell" aria-labelledby="intro-title">
         <div class="intro-content">
-          <img
-            src="assets/img/Eu1.jpeg"
-            alt="Gabriel de Oliveira"
-            class="intro-pic"
-          />
-          <div class="intro-txt">
-            <h2>Olá! Me chamo Gabriel de Oliveira.</h2>
-            <p>
-              Apaixonado por tecnologia e desenvolvimento web. Gosto de criar
-              soluções práticas e aprender novas habilidades todos os dias.
-            </p>
-            <a href="aboutMe.html">Quem sou eu?</a>
-            <button
-              id="theme-toggle"
-              class="theme-toggle button"
-              onclick="toggleTheme()"
-            >
-              🌙
-            </button>
+          <div class="intro-copy">
+            <p class="eyebrow">Portfólio pessoal</p>
+            <h1 id="intro-title"><span class="greeting">Olá! Me chamo</span><strong>Gabriel de Oliveira.</strong></h1>
+            <p class="intro-text">Apaixonado por tecnologia e desenvolvimento web. Gosto de criar soluções práticas e aprender novas habilidades todos os dias.</p>
+            <a class="text-link" href="aboutMe.html">Quem sou eu? <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
+          <img src="assets/img/Eu1.jpeg" alt="Gabriel de Oliveira" class="intro-pic" />
         </div>
       </section>
 
-      <section class="cards-container">
-        <div class="card">
-          <h3>Site Básico</h3>
-          <p>Site básico feito apenas em HTML e CSS</p>
-          <a
-            href="assets/docs/SiteBasicoHTMLeCSS/"
-            class="button"
-            target="_blank"
-            >Clique Aqui!</a
-          >
+      <section id="projetos" class="projects section-shell" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Projetos</p>
+            <h2 id="projects-title">O que venho desenvolvendo</h2>
+          </div>
+          <p class="section-intro">Projetos práticos para exercitar desenvolvimento web, lógica e interatividade.</p>
         </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-number">01</span>
+            <div class="project-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+            <h3>Site Básico</h3>
+            <p>Site básico feito apenas em HTML e CSS.</p>
+            <a href="assets/docs/SiteBasicoHTMLeCSS/" class="project-link" target="_blank" rel="noopener">Clique aqui <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+          <article class="project-card">
+            <span class="project-number">02</span>
+            <div class="project-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></div>
+            <h3>Calculadora</h3>
+            <p>Calculadora simples feita em JavaScript.</p>
+            <a href="assets/docs/Calculadora_JS/Projeto/index.html" class="project-link" target="_blank" rel="noopener">Clique aqui <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+          <article class="project-card">
+            <span class="project-number">03</span>
+            <div class="project-icon"><i class="fa-solid fa-receipt" aria-hidden="true"></i></div>
+            <h3>Calculadora de Gorjeta</h3>
+            <p>Com opções de porcentagem e divisão.</p>
+            <a href="assets/docs/TipCalculator/index.html" class="project-link" target="_blank" rel="noopener">Clique aqui <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+          <article class="project-card">
+            <span class="project-number">04</span>
+            <div class="project-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+            <h3>Pick a Color</h3>
+            <p>Clique no botão para selecionar aleatoriamente uma cor.</p>
+            <a href="assets/docs/ColorChanger/index.html" class="project-link" target="_blank" rel="noopener">Clique aqui <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+          <article class="project-card">
+            <span class="project-number">05</span>
+            <div class="project-icon"><i class="fa-solid fa-dice" aria-hidden="true"></i></div>
+            <h3>Guess the Number</h3>
+            <p>Jogo de adivinhação entre 1 e 100 contra o computador.</p>
+            <a href="assets/docs/GuessTheNumber/index.html" class="project-link" target="_blank" rel="noopener">Clique aqui <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          </article>
+        </div>
+      </section>
 
-        <div class="card">
-          <h3>Calculadora</h3>
-          <p>Calculadora simples feita em JavaScript</p>
-          <a
-            href="assets/docs/Calculadora_JS/Projeto/index.html"
-            class="button"
-            target="_blank"
-            >Clique Aqui!</a
-          >
+      <section id="contato" class="contact section-shell" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2 id="contact-title">Encontre-me nas redes</h2>
         </div>
-
-        <div class="card">
-          <h3>Calculadora de Gorjeta</h3>
-          <p>Com opções de porcentagem e divisão</p>
-          <a
-            href="assets/docs/TipCalculator/index.html"
-            class="button"
-            target="_blank"
-            >Clique Aqui!</a
-          >
-        </div>
-
-        <div class="card">
-          <h3>Pick a Color</h3>
-          <p>Clique no botão para selecionar aleatoriamente uma cor</p>
-          <a
-            href="assets/docs/ColorChanger/index.html"
-            class="button"
-            target="_blank"
-            >Clique Aqui!</a
-          >
-        </div>
-
-        <div class="card">
-          <h3>Guess the Number</h3>
-          <p>Jogo de adivinhação entre 1 e 100 contra o computador</p>
-          <a
-            href="assets/docs/GuessTheNumber/index.html"
-            class="button"
-            target="_blank"
-            >Clique Aqui!</a
-          >
-        </div>
+        <a class="button button-primary" href="https://www.linkedin.com/in/gabriel-de-oliveira-44023a348/" target="_blank" rel="noopener">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
       </section>
     </main>
-    <footer>
-      <p>Desenvolvido por Gabriel de Oliveira</p>
-      <p>2025</p>
-      <a
-        href="https://www.instagram.com/gabriel99oliveira/"
-        aria-label="Perfil do Instagram de Gabriel"
-        ><i class="fab fa-instagram"></i> Instagram</a
-      >
-      <a
-        href="https://github.com/GabrielDe0liveira"
-        aria-label="Perfil do GitHub de Gabriel"
-        ><i class="fab fa-github"></i> GitHub</a
-      >
-      <a
-        href="https://www.linkedin.com/in/gabriel-de-oliveira-44023a348/"
-        aria-label="Perfil do LinkedIn de Gabriel"
-        ><i class="fab fa-linkedin"></i> LinkedIn</a
-      >
-      <a href="assets/docs/CurriculumVitae/Gabriel de Oliveira.pdf"
-         aria-label="Curriculo de Gabrieel"
-         ><i class="fa-solid fa-sheet-plastic"></i> Curriculo</a>
-    </footer>
 
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <p>Desenvolvido por Gabriel de Oliveira · <span id="current-year">2026</span></p>
+        <div class="social-links" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/gabriel99oliveira/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://github.com/GabrielDe0liveira" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/gabriel-de-oliveira-44023a348/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="assets/docs/CurriculumVitae/Gabriel de Oliveira.pdf" target="_blank" rel="noopener" aria-label="Currículo"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>
